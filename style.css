@@ -1,52 +1,76 @@
-:root{
-    --main-color: #00339170
+:root {
+    --main-color: #1e1e2f;
+    --accent-color: #e50914;
+    --text-color: #f4f4f4;
+    --card-bg: #2c2c3e;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
     background-color: var(--main-color);
-    color: rgba(252, 248, 248, 0.922);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+h1 {
+    margin-bottom: 1rem;
 }
 
 input {
-    width: 40%;
-    padding: 17px;
-    margin: 15px ;
+    width: 60%;
+    max-width: 400px;
+    padding: 15px;
+    margin: 10px 10px 20px 0;
     border: none;
-    transition: all ease-in-out 300ms;
-    &:focus{
-        border-radius: 10px;
-        outline: none;
-    }
-
+    border-radius: 8px;
+    font-size: 1em;
 }
 
 button {
-    padding: 20px 25px;
-    background: rgb(242, 123, 123);
-    color: var(--main-color);
+    padding: 15px 25px;
+    background: var(--accent-color);
+    color: white;
     border: none;
     cursor: pointer;
     font-size: 1em;
-    border-radius: 50%;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #ff2e3d;
 }
 
 #movie-container {
-    margin-top: 10px;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
     width: 100%;
-    scale: 0.9;
-    gap: 3rem
+    margin-top: 2rem;
 }
+
 .movie-card {
-    margin: 5px;
-    margin-top: 10px;
-    text-align: center;
+    background-color: var(--card-bg);
+    padding: 1rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
 }
 
 .movie-card img {
     width: 100%;
-    border-radius: 5px;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
 }
