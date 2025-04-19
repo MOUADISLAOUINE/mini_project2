@@ -1,0 +1,52 @@
+:root{
+    --main-color: #00339170
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: var(--main-color);
+    color: rgba(252, 248, 248, 0.922);
+}
+
+input {
+    width: 40%;
+    padding: 17px;
+    margin: 15px ;
+    border: none;
+    transition: all ease-in-out 300ms;
+    &:focus{
+        border-radius: 10px;
+        outline: none;
+    }
+
+}
+
+button {
+    padding: 20px 25px;
+    background: rgb(242, 123, 123);
+    color: var(--main-color);
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 50%;
+}
+
+#movie-container {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: 100%;
+    scale: 0.9;
+    gap: 3rem
+}
+.movie-card {
+    margin: 5px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 5px;
+}
