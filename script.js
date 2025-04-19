@@ -4,6 +4,15 @@ document.getElementById("search-btn").addEventListener("click", function () {
   fetchMovies(movieName);
 });
 
+input.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    let movieName = input.value;
+    fetchMovies(movieName);
+  }
+});
+
+
+
 function fetchMovies(movieName) {
   let apiKey = "864d164c"; // Replace with your OMDb API key
   let url = `https://www.omdbapi.com/?apikey=${apiKey}&s=${movieName}`;
