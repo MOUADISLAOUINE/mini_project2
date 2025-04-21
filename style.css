@@ -1,68 +1,111 @@
 :root {
-    --main-color: #1e1e2f;
+    --main-color: rgba(0, 0, 0, 0.7);
     --accent-color: #e50914;
-    --text-color: #f4f4f4;
-    --card-bg: #2c2c3e;
+    --text-color: #ffffff;
+    --card-bg: #1c1c1c;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    background-color: var(--main-color);
+    font-family: Arial, sans-serif;
+    background: url('back.jpeg.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: var(--text-color);
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.85);
+    min-height: 100vh;
+}
+
+/* Navbar */
+nav {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    background-color: #111;
+    padding: 1rem 2rem;
 }
 
-.container {
-    padding: 2rem;
-    width: 100%;
-    max-width: 1300px;
+nav h2 {
+    margin: 0;
+    color: var(--accent-color);
+    font-size: 1.8rem;
 }
 
-h1 {
-    margin-bottom: 1rem;
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: transform 0.3s ease; /* Transition for smooth movement */
+}
+
+/* Effect for the links */
+.nav-links a:hover {
+    transform: scale(1.1); /* Slightly enlarge the link */
+    color: var(--accent-color); /* Change color on hover */
+}
+
+.intro {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
 }
 
 input {
-    width: 60%;
-    max-width: 400px;
-    padding: 15px;
-    margin: 10px 10px 20px 0;
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
     border: none;
-    border-radius: 8px;
     font-size: 1em;
+    margin: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for smooth movement and shadow */
+}
+
+input:hover {
+    transform: scale(1.05); /* Slightly enlarge the input */
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7); /* Add a glowing effect */
 }
 
 button {
-    padding: 15px 25px;
+    padding: 10px 20px;
     background: var(--accent-color);
-    color: white;
     border: none;
-    cursor: pointer;
+    border-radius: 5px;
+    color: white;
     font-size: 1em;
-    border-radius: 8px;
-    transition: background 0.3s ease;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transition for smooth movement */
 }
 
 button:hover {
-    background: #ff2e3d;
+    transform: scale(1.05); /* Slightly enlarge the button */
+    background-color: #b4060c; /* Darker shade for the hover effect */
 }
 
 #movie-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 3rem;
-    width: 100%;
-    margin-top: 2rem;
+    grid-template-columns: repeat(5, 1fr); /* 5 films par ligne */
+    gap: 1.5rem;
+    padding: 2rem;
+    max-height: 80vh; /* Limiter la hauteur du conteneur pour éviter le débordement */
+    overflow-y: auto; /* Ajouter une barre de défilement si nécessaire */
 }
 
 .movie-card {
     background-color: var(--card-bg);
-    padding: 1rem;
     border-radius: 10px;
-    transition: transform 0.3s ease;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s;
 }
 
 .movie-card:hover {
@@ -71,6 +114,75 @@ button:hover {
 
 .movie-card img {
     width: 100%;
+    height: 250px;
+    object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 0.5rem;
+}
+
+.movie-card h3 {
+    margin: 0.5rem 0 0.3rem;
+}
+/* RESPONSIVE DESIGN */
+@media (max-width: 1200px) {
+#movie-container {
+grid-template-columns: repeat(4, 1fr);
+}
+}
+
+@media (max-width: 992px) {
+#movie-container {
+grid-template-columns: repeat(3, 1fr);
+}
+}
+
+@media (max-width: 768px) {
+nav {
+flex-direction: column;
+align-items: flex-start;
+}
+
+.nav-links {
+flex-direction: column;
+width: 100%;
+margin-top: 1rem;
+}
+
+.intro h1 {
+font-size: 2rem;
+padding: 0 1rem;
+}
+
+input {
+width: 80%;
+max-width: 400px;
+}
+
+    #movie-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1rem;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav h2 {    
+        font-size: 1.5rem;
+    }
+
+    .intro h1 {
+        font-size: 1.5rem;
+    }
+
+    input {
+        width: 90%;
+    }
+
+    button {
+        width: 90%;
+        margin-top: 0.5rem;
+    }
+
+    #movie-container {
+        grid-template-columns: 1fr;
+    }
 }
