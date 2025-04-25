@@ -5,42 +5,13 @@
   --card-bg: #1c1c1c;
 }
 
-<<<<<<< HEAD
 
-<<<<<<< HEAD
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: url("back.jpeg.jpg") no-repeat center center fixed;
   background-size: cover;
   color: var(--text-color);
-=======
-
-=======
->>>>>>> 576edcf (last)
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: url("back.jpeg.jpg") no-repeat center center fixed;
-  background-size: cover;
-  color: var(--text-color);
-}
-
-.overlay {
-  background-color: rgba(0, 0, 0, 0.85);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-<<<<<<< HEAD
-#intro_text{
-    padding-top: 10rem;
-    text-align:center;
-    color: #f7f4f4;
-    font-size: 2em;
-    
->>>>>>> 0bfac90 (seconde update frome mouad)
 }
 
 .overlay {
@@ -65,23 +36,6 @@ nav h2 {
   font-size: 1.8rem;
 }
 
-=======
-/* Navbar */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #111;
-  padding: 1rem 2rem;
-}
-
-nav h2 {
-  margin: 0;
-  color: var(--accent-color);
-  font-size: 1.8rem;
-}
-
->>>>>>> 576edcf (last)
 .nav-links {
   display: flex;
   gap: 1rem;
@@ -110,10 +64,6 @@ nav h2 {
 }
 
 input {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 576edcf (last)
   padding: 10px;
   width: 300px;
   border-radius: 5px;
@@ -126,7 +76,6 @@ input {
 input:hover {
   transform: scale(1.05); /* Slightly enlarge the input */
   box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7); /* Add a glowing effect */
-<<<<<<< HEAD
 }
 
 button {
@@ -138,39 +87,6 @@ button {
   font-size: 1em;
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease; /* Transition for smooth movement */
-=======
-    width: 100%;
-    max-width: 400px;
-    padding: 20px 20px;
-    margin: 10px 10px;
-    border: none;
-    border-radius: 8px;
-    font-size: 0.5em;
-}
-
-button {
-    padding: 15px 15px;
-    background: var(--accent-color);
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 0.5em;
-    border-radius: 8px;
-    transition: background 0.3s ease;
->>>>>>> 0bfac90 (seconde update frome mouad)
-=======
-}
-
-button {
-  padding: 10px 20px;
-  background: var(--accent-color);
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 1em;
-  cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease; /* Transition for smooth movement */
->>>>>>> 576edcf (last)
 }
 
 button:hover {
@@ -179,10 +95,6 @@ button:hover {
 }
 
 #movie-container {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 576edcf (last)
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* 5 films par ligne */
   gap: 1.5rem;
@@ -190,16 +102,6 @@ button:hover {
   /* delete plz */
   /* max-height: 80vh; Limiter la hauteur du conteneur pour éviter le débordement */
   overflow-y: auto; /* Ajouter une barre de défilement si nécessaire */
-<<<<<<< HEAD
-=======
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 3rem;
-    width: 100%;
-    margin-top: 6rem;
->>>>>>> 0bfac90 (seconde update frome mouad)
-=======
->>>>>>> 576edcf (last)
 }
 
 .movie-card {
@@ -220,10 +122,6 @@ button:hover {
   object-fit: cover;
   border-radius: 8px;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 576edcf (last)
 
 .movie-card h3 {
   margin: 0.5rem 0 0.3rem;
@@ -252,7 +150,6 @@ button:hover {
     width: 100%;
     margin-top: 1rem;
   }
-<<<<<<< HEAD
 
   .intro h1 {
     font-size: 2rem;
@@ -394,99 +291,3 @@ button:hover {
     width: 100%;
   }
 }
-=======
-.comments_catd{
-    position: relative;
-    text-align: start;
-    margin-top: 100em;
-    
-=======
->>>>>>> 576edcf (last)
-
-  .intro h1 {
-    font-size: 2rem;
-    padding: 0 1rem;
-  }
-
-  input {
-    width: 80%;
-    max-width: 400px;
-  }
-
-  #movie-container {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 1rem;
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  nav h2 {
-    font-size: 1.5rem;
-  }
-
-  .intro h1 {
-    font-size: 1.5rem;
-  }
-
-  input {
-    width: 90%;
-  }
-
-  button {
-    width: 90%;
-    margin-top: 0.5rem;
-  }
-
-  #movie-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-.comments-card {
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
-  font-family: sans-serif;
-  margin-bottom: 50px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.comment {
-  border: 1px solid #ccc;
-  padding: 15px 20px 10px 15px;
-  cursor: pointer;
-  border-radius: 10px;
-  border-radius: 10px;
-  background-color: #0a0a0a;
-  border-color: #fa9598;
-}
-
-.comment-question {
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-}
-
-.comment-answer {
-  display: none;
-  padding-top: 7px;
-  color: #c1bdbd;
-  font-size: large;
-}
-
-.comment.open .comment-answer {
-  display: block;
-}
-
-.toggle-icon {
-  transition: transform 0.3s;
-  font-size: 25px;
-}
-
-.comment.open .toggle-icon {
-  transform: rotate(45deg);
-}
->>>>>>> 0bfac90 (seconde update frome mouad)
