@@ -92,3 +92,9 @@ window.addEventListener("click", (e) => {
     navLinks.classList.remove("show");
   }
 });
+
+document.querySelectorAll(".comment").forEach((comment) => {
+  comment.addEventListener("click", () => {
+    comment.classList.toggle("open");
+  });
+});

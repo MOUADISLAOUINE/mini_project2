@@ -5,7 +5,6 @@
   --card-bg: #1c1c1c;
 }
 
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -46,16 +45,14 @@ nav h2 {
   text-decoration: none;
   color: var(--text-color);
   font-weight: bold;
-  transition: transform 0.3s ease; /* Transition for smooth movement */
+  transition: transform 0.3s ease;
 }
 
-/* Effect for the links */
+/* Hover Effect */
 .nav-links a:hover {
-  transform: scale(1.1); /* Slightly enlarge the link */
-  color: var(--accent-color); /* Change color on hover */
+  transform: scale(1.1);
+  color: var(--accent-color);
 }
-
-
 
 .hamburger {
   display: none;
@@ -65,10 +62,16 @@ nav h2 {
   user-select: none;
 }
 
+/* Responsive Navbar */
 @media (max-width: 768px) {
+  nav {
+    flex-direction: row; /* garder en ligne même sur mobile */
+    justify-content: space-between; /* séparer titre et hamburger */
+    align-items: center;
+  }
+
   .hamburger {
     display: block;
-    align-items: end;
   }
 
   .nav-links {
@@ -93,7 +96,6 @@ nav h2 {
   }
 }
 
-
 .intro {
   text-align: center;
   margin-top: 3rem;
@@ -110,12 +112,12 @@ input {
   border: none;
   font-size: 1em;
   margin: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for smooth movement and shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:hover {
-  transform: scale(1.05); /* Slightly enlarge the input */
-  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7); /* Add a glowing effect */
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
 }
 
 button {
@@ -126,22 +128,21 @@ button {
   color: white;
   font-size: 1em;
   cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease; /* Transition for smooth movement */
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 button:hover {
-  transform: scale(1.05); /* Slightly enlarge the button */
-  background-color: #b4060c; /* Darker shade for the hover effect */
+  transform: scale(1.05);
+  background-color: #b4060c;
 }
 
+/* Movies Grid */
 #movie-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 films par ligne */
+  grid-template-columns: repeat(5, 1fr);
   gap: 1.5rem;
   padding: 2rem;
-  /* delete plz */
-  /* max-height: 80vh; Limiter la hauteur du conteneur pour éviter le débordement */
-  overflow-y: auto; /* Ajouter une barre de défilement si nécessaire */
+  overflow-y: auto;
 }
 
 .movie-card {
@@ -166,7 +167,8 @@ button:hover {
 .movie-card h3 {
   margin: 0.5rem 0 0.3rem;
 }
-/* RESPONSIVE DESIGN */
+
+/* Responsive Movies Grid */
 @media (max-width: 1200px) {
   #movie-container {
     grid-template-columns: repeat(4, 1fr);
@@ -180,17 +182,6 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  /* .nav-links {
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1rem;
-  } */
-
   .intro h1 {
     font-size: 2rem;
     padding: 0 1rem;
@@ -231,7 +222,7 @@ button:hover {
   }
 }
 
-
+/* Info Card Section */
 .info-card {
   display: flex;
   gap: 20px;
@@ -269,7 +260,6 @@ button:hover {
   color: #333;
 }
 
-/* Responsive: Stack on small screens */
 @media (max-width: 600px) {
   .content {
     width: 100%;
@@ -277,12 +267,13 @@ button:hover {
   }
   .card {
     width: 100%;
-}
-  .comment{
+  }
+  .comment {
     margin: 0 30px;
   }
 }
 
+/* Comments Section */
 .comments-card {
   width: 100%;
   max-width: 600px;
@@ -293,14 +284,12 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  
 }
 
 .comment {
   border: 1px solid #ccc;
   padding: 15px 20px 10px 15px;
   cursor: pointer;
-  border-radius: 10px;
   border-radius: 10px;
   background-color: #0a0a0a;
   border-color: #fa9598;
@@ -310,7 +299,6 @@ button:hover {
   display: flex;
   justify-content: space-between;
   font-weight: bold;
-  
 }
 
 .comment-answer {
@@ -332,4 +320,3 @@ button:hover {
 .comment.open .toggle-icon {
   transform: rotate(45deg);
 }
-
