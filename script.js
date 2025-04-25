@@ -91,11 +91,42 @@ function fetchMovies(query) {
         console.error("Erreur:", data.Error);
       }
     })
-    .catch((err) => console.error("Erreur de l'API:", err));
+    .catch((error) => console.log("Error:", error));
 }
 
-document.querySelectorAll(".comment").forEach((comment) => {
-  comment.addEventListener("click", () => {
-    comment.classList.toggle("open");
+function displayMovies(movies) {
+  let movieContainer = document.getElementById("movie-container");
+  movieContainer.innerHTML = ""; // Clear previous results
+
+  if (!movies || movies.length === 0) {
+    movieContainer.innerHTML = "<p>No movies found!</p>";
+    return;
+  }
+
+  // Create document fragment for efficient DOM updates
+  const fragment = document.createDocumentFragment();
+
+  movies.forEach((movie) => {
+    const movieCard = document.createElement("div");
+    movieCard.className = "movie-card";
+    movieCard.innerHTML = `
+      <img src="${movie.Poster}" alt="${movie.Title}">
+      <h3>${movie.Title}</h3>
+      <p> Type : ${movie.Type}</p>
+      <p>Year: ${movie.Year}</p>
+    `;
+    fragment.appendChild(movieCard);
   });
+
+  movieContainer.appendChild(fragment);
+}
+
+// Initial load with popular movies
+window.addEventListener('load', function() {
+  fetchMovies("action"); // Default search on page load
+
+searchBtn.addEventListener("", function () {
+  let movieName = input.value;
+  fetchMovies(movieName);
+});
 });
