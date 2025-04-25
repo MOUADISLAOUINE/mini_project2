@@ -5,6 +5,7 @@
   --card-bg: #1c1c1c;
 }
 
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -190,15 +191,62 @@ button:hover {
   }
 }
 
+
+.info-card {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.content {
+  background-color: #C24545;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.content img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 12px;
+}
+
+.card-text {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Responsive: Stack on small screens */
+@media (max-width: 600px) {
+  .content {
+    width: 100%;
+  }
+}
+
 .comments-card {
   width: 100%;
   max-width: 600px;
   margin: auto;
   font-family: sans-serif;
   margin-bottom: 50px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   gap: 15px;
+  
 }
 
 .comment {
@@ -215,6 +263,7 @@ button:hover {
   display: flex;
   justify-content: space-between;
   font-weight: bold;
+  
 }
 
 .comment-answer {
@@ -235,4 +284,10 @@ button:hover {
 
 .comment.open .toggle-icon {
   transform: rotate(45deg);
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
 }
