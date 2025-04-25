@@ -91,9 +91,10 @@ function fetchMovies(query) {
         console.error("Erreur:", data.Error);
       }
     })
-    .catch((error) => console.log("Error:", error));
+    .catch((err) => console.error("Erreur de l'API:", err));
 }
 
+<<<<<<< HEAD
 function displayMovies(movies) {
   let movieContainer = document.getElementById("movie-container");
   movieContainer.innerHTML = ""; // Clear previous results
@@ -130,3 +131,10 @@ searchBtn.addEventListener("", function () {
   fetchMovies(movieName);
 });
 });
+=======
+document.querySelectorAll(".comment").forEach((comment) => {
+  comment.addEventListener("click", () => {
+    comment.classList.toggle("open");
+  });
+});
+>>>>>>> 576edcf (last)
