@@ -9,7 +9,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: url("back.jpeg.jpg") no-repeat center center fixed;
+  background: url("img/back.jpg") no-repeat center center fixed;
   background-size: cover;
   color: var(--text-color);
   width: 100%;
@@ -298,11 +298,11 @@ button:hover {
   }
 
   input {
-    width: 90%;
+    width: 80%;
   }
 
   button {
-    width: 90%;
+    width: 80%;
     margin-top: 0.5rem;
   }
 
@@ -367,6 +367,14 @@ button:hover {
 
   .comment {
     margin: 0 30px;
+  }
+}
+@media(max-width:452px){
+  .overlay{
+     width: 110%; 
+  }
+  body{
+    background-image: url("img/back.jpg");
   }
 }
 
