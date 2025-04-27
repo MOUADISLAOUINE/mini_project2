@@ -2,8 +2,9 @@
   --main-color: rgba(0, 0, 0, 0.7);
   --accent-color: #e50914;
   --text-color: #ffffff;
-  --card-bg: #1c1c1c;
+  --card-bg: #1a1a1a;
 }
+
 
 body {
   margin: 0;
@@ -11,6 +12,7 @@ body {
   background: url("back.jpeg.jpg") no-repeat center center fixed;
   background-size: cover;
   color: var(--text-color);
+  width: 100%;
 }
 
 .overlay {
@@ -18,21 +20,32 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
-/* Navbar */
+/* Navbar Amine */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #111;
   padding: 1rem 2rem;
+  background-color: #1111;
 }
 
 nav h2 {
   margin: 0;
   color: var(--accent-color);
   font-size: 1.8rem;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav .logo img {
+  width: 70px;
 }
 
 .nav-links {
@@ -48,7 +61,6 @@ nav h2 {
   transition: transform 0.3s ease;
 }
 
-/* Hover Effect */
 .nav-links a:hover {
   transform: scale(1.1);
   color: var(--accent-color);
@@ -62,11 +74,11 @@ nav h2 {
   user-select: none;
 }
 
-/* Responsive Navbar */
+/* Respo Navbar  Amine*/
 @media (max-width: 768px) {
   nav {
-    flex-direction: row; /* garder en ligne même sur mobile */
-    justify-content: space-between; /* séparer titre et hamburger */
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
   }
 
@@ -96,14 +108,18 @@ nav h2 {
   }
 }
 
+/* Intro Section Mouad */
 .intro {
   text-align: center;
   margin-top: 3rem;
 }
 
 .intro h1 {
+  width: 85%;
   font-size: 2.5rem;
+
 }
+
 
 input {
   padding: 10px;
@@ -136,7 +152,7 @@ button:hover {
   background-color: #b4060c;
 }
 
-/* Movies Grid */
+/* Movie Grid */
 #movie-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -168,7 +184,71 @@ button:hover {
   margin: 0.5rem 0 0.3rem;
 }
 
-/* Responsive Movies Grid */
+/* footer  Abdelaziz*/
+.footer {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer img {
+  width: 120px;
+}
+
+.footer .detais ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer .rejoind {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .rejoind h2 {
+  font-size: 32px;
+}
+
+.footer .rejoind h2::first-letter {
+  font-weight: bold;
+  color: red;
+  font-size: 40px;
+}
+
+.footer .rejoind span {
+  padding: 0px 40px;
+  margin: 0px 20px;
+}
+
+.footer .line {
+  width: 50px;
+  height: 3px;
+  background-color: red;
+}
+
+.footer .detais ul li {
+  list-style: none;
+  margin-top: 20px;
+  padding: 0px 20px;
+}
+
+.footer p {
+  font-weight: 800;
+}
+
+.footer .social_media i {
+  margin: 10px 30px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
 @media (max-width: 1200px) {
   #movie-container {
     grid-template-columns: repeat(4, 1fr);
@@ -197,6 +277,15 @@ button:hover {
     padding: 1rem;
     gap: 1rem;
   }
+
+  .footer .detais ul li {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0px;
+    font-weight: bold;
+    margin-right: 20px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -220,6 +309,11 @@ button:hover {
   #movie-container {
     grid-template-columns: 1fr;
   }
+
+  .footer .rejoind h2 {
+    font-size: 18px;
+    text-align: center;
+  }
 }
 
 /* Info Card Section */
@@ -232,7 +326,7 @@ button:hover {
 }
 
 .content {
-  background-color: #C24545;
+  background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -250,14 +344,15 @@ button:hover {
 }
 
 .content img {
-  width: 60px;
-  height: 60px;
+  width: 100px;
   margin-bottom: 12px;
+  border-radius: 50%;
+  background-color: transparent;
 }
 
 .card-text {
   font-size: 16px;
-  color: #333;
+  color: #0e0b0b;
 }
 
 @media (max-width: 600px) {
@@ -265,9 +360,11 @@ button:hover {
     width: 100%;
     margin: 0 50px;
   }
+
   .card {
     width: 100%;
   }
+
   .comment {
     margin: 0 30px;
   }
@@ -278,12 +375,12 @@ button:hover {
   width: 100%;
   max-width: 600px;
   margin: auto;
-  font-family: sans-serif;
   margin-bottom: 50px;
   margin-top: 50px;
   display: flex;
   flex-direction: column;
   gap: 15px;
+  font-family: sans-serif;
 }
 
 .comment {
