@@ -46,7 +46,7 @@ function displayMovies(movies) {
   movieContainer.innerHTML = "";
 
   movies.forEach(movie => {
-    const poster = movie.Poster !== "N/A" ? movie.Poster : "default-poster.jpg";
+    const poster = movie.Poster !== "N/A" ? movie.Poster : "img/notfound.png";
 
     const card = document.createElement("div");
     card.className = "movie-card";
@@ -71,11 +71,13 @@ function fetchMovies(query) {
       if (data.Response === "True") {
         displayMovies(data.Search);
       } else {
-        movieContainer.innerHTML = "<p>Aucun film trouvé.</p>";
+        movieContainer.innerHTML = `<div class="no-movies">
+                                      <p >Aucun film trouvé!</p> </div>`;
       }
     })
     .catch(() => {
-      movieContainer.innerHTML = "<p>Erreur lors de la recherche.</p>";
+      movieContainer.innerHTML = `<div class="no-movies">
+                                   <p>Erreur lors de la recherche.</p></div>`;
     });
 }
 
